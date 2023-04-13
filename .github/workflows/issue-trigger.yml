@@ -2,7 +2,7 @@ name: Issue Trigger
 on:
   workflow_dispatch:
   issues:
-    types: [opened, transferred, assigned]
+    types: [opened, transferred, assigned], labeled]
 
 jobs:
   Add-Missing-Labels-To-Issues:
@@ -78,11 +78,17 @@ jobs:
     if: ${{ contains(github.event.issue.labels.*.name, 'Feature Branch') }}
     steps:
       - uses: actions/github-script@v4
+      - name: Install dependencies and echo a message
+        run: |
+          echo "Installing dependencies"
+          npm install
+          echo "Dependencies installed"
       - name: Add feature branch instructions to top comment
-      - id: top-comment-instructions
+        id: top-comment-instructions
         with:
           script: |
             const script = require('./github-actions/trigger-issue/append-top-comment.js')
             script({g: github, c:context})
+            console.log("Script was executed");
  
 
