@@ -18,7 +18,7 @@ async function main({g, c}) {
 		"https://github.com/hackforla/website/wiki/How-to-work-off-of-a-feature-branch";
 	
 	await octokit.request("PATCH /repos/{owner}/{repo}/issues/{issue_number}", {
-		owner: "hackforla",
+		owner: "arcan9",
 		repo: "website",
 		issue_number: issueNum,
 		title: "Instructions for Feature Branch",
