@@ -2,7 +2,7 @@ name: Issue Trigger
 on:
   workflow_dispatch:
   issues:
-    types: [opened, transferred, assigned], labeled]
+    types: [opened, transferred, assigned, labeled]
 
 jobs:
   Add-Missing-Labels-To-Issues:
@@ -90,5 +90,7 @@ jobs:
             const script = require('./github-actions/trigger-issue/append-top-comment.js')
             script({g: github, c:context})
             console.log("Script was executed");
+          env:
+            repo-token: ${{ secrets.HFLA_PROJECT_BOARD_TOKEN }}
  
 
