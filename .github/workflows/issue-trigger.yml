@@ -91,6 +91,6 @@ jobs:
             script({g: github, c:context})
             console.log("Script was executed");
           env:
-            repo-token: ${{ secrets.HFLA_PROJECT_BOARD_TOKEN }}
+            REPO_TOKEN: ${{ secrets.HFLA_PROJECT_BOARD_TOKEN }}
  
 
