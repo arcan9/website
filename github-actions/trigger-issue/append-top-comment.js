@@ -12,7 +12,7 @@ async function main({g, c}) {
 	github = g
 	context = c
 
-	const octokit = new Octokit({ auth: process.env.HFLA_PROJECT_BOARD_TOKEN })
+	const octokit = new Octokit({ auth: secrets.HFLA_PROJECT_BOARD_TOKEN })
 	const issueNum = context.payload.issue.number
 	const wikiLink =
 		"https://github.com/hackforla/website/wiki/How-to-work-off-of-a-feature-branch";
