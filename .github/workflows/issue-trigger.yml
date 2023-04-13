@@ -1,5 +1,6 @@
 name: Issue Trigger
 on:
+  workflow_dispatch:
   issues:
     types: [opened, transferred, assigned]
 
