@@ -2,12 +2,6 @@ name: Issue Trigger
 on:
   issues:
     types: [opened, transferred, assigned, labeled]
-  push:
-    branches:
-    - gh-pages
-  pull_request:
-    branches: 
-    - gh-pages
 
 jobs:
   Add-Missing-Labels-To-Issues:
