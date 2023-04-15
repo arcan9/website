@@ -3,7 +3,6 @@ on:
   issues:
     types: [opened, transferred, assigned, labeled]
 
-
 jobs:
   Add-Missing-Labels-To-Issues:
     runs-on: ubuntu-latest
