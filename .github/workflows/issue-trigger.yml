@@ -74,7 +74,7 @@ jobs:
   Automatic-Response-To-Feature-Branch-Issues:
     runs-on: ubuntu-latest
     # Runs only when an issue has the label with the words 'Feature Branch'
-    if: ${{ contains(github.event.issue.labels.*.name, 'Feature Branch') && github.event.action == 'labeled')}}
+    if: ${{ github.event_name == 'issues' && github.event.action == 'labeled' && contains(github.event.issue.labels.*.name, 'Feature Branch'))}}
     steps:
       - uses: actions/github-script@v4
       - name: Add feature branch instructions to top comment
